@@ -31,11 +31,11 @@ void ResizableItem::mouseMoveEvent(QMouseEvent *event)
 
         if (_resizeDirection & Top) {
             // resize(newGeometry.width(), newGeometry.height() + deltaY);
-            // newGeometry.setTop(newGeometry.top() + deltaY);
+            newGeometry.setTop(newGeometry.top() + deltaY);
         }
         if (_resizeDirection & Bottom) {
             // resize(newGeometry.width(), newGeometry.height() + deltaY);
-            // newGeometry.setBottom(newGeometry.bottom() + deltaY);
+            newGeometry.setBottom(newGeometry.bottom() + deltaY);
         }
         if (_resizeDirection & Left) {
             newGeometry.setLeft(newGeometry.left() + deltaX);
@@ -44,7 +44,7 @@ void ResizableItem::mouseMoveEvent(QMouseEvent *event)
             newGeometry.setRight(newGeometry.right() + deltaX);
         }
 
-        // resize(newGeometry.width(), newGeometry.height());
+        resize(newGeometry.width(), newGeometry.height());
         _lastMousePos = event->pos();
 
         emit resized();

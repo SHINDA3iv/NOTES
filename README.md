@@ -1,1 +1,1 @@
-# NOTES
+# MindNote
